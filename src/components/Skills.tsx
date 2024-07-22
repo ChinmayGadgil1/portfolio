@@ -1,18 +1,43 @@
-import React from 'react'
-import { DiMongodb, DiPhotoshop, DiPostgresql, DiSqllite } from "react-icons/di";
-import { FaBootstrap, FaCss3, FaDatabase, FaGithub, FaGithubAlt, FaHtml5, FaJs, FaLinkedin, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
-import { FaSquareXTwitter, FaX } from "react-icons/fa6";
+'use client'
+import React, { useEffect, useRef } from 'react'
+import { DiPhotoshop} from "react-icons/di";
+import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaJs,  FaNodeJs, FaReact } from "react-icons/fa";
+
 import { FiFigma } from "react-icons/fi";
-import { GiTBrick } from "react-icons/gi";
-import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMongoose, SiMongoosedotws, SiNextdotjs, SiPostgresql, SiPostman, SiQlik, SiShadcnui, SiSqlalchemy, SiTypescript } from "react-icons/si";
-import { TbSql } from "react-icons/tb";
+import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMongoose, SiNextdotjs, SiPostgresql, SiPostman,SiShadcnui, SiTypescript } from "react-icons/si";
+
+import { motion,useAnimation,useInView } from 'framer-motion';
 
 function Skills() {
+
+    const ref = useRef(null)
+    const inview = useInView(ref,{once:true});
+    const control = useAnimation()
+
+    
+    
+    useEffect(() => {
+      if(inview) {  
+          control.start("visible");
+      }
+    
+    }, [inview,control])
+
   return (
-    <div className="flex flex-col items-center m-4 p-4 overflow-hidden">
+    <div className='overflow-hidden flex justify-center items-center'>
+
+    <motion.div ref={ref} className="flex flex-col items-center m-4 p-4 overflow-hidden w-[90vw]" variants={
+        {
+            hidden: {opacity: 0, y: 50},
+            visible: {opacity: 1, y: 0},
+        }
+    } 
+    initial={"hidden"}
+    animate = {control}
+    transition={{delay:0.07,duration:0.5}}>
           <p className="text-6xl font-bold p-4 m-4">MY SKILLS</p>
-          <div className="flex flex-wrap h-fit justify-around gap-5 ">
-            <div className="w-[30vw] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+          <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5 ">
+            <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Frontend</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaHtml5 className="aspect-square h-20 w-12" />
@@ -25,7 +50,7 @@ function Skills() {
                 <SiShadcnui className="aspect-square h-20 w-12" />
               </div>
             </div>
-            <div className="w-[30vw] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Backend</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaNodeJs className="aspect-square h-20 w-12" />
@@ -35,7 +60,7 @@ function Skills() {
                 <SiNextdotjs className="aspect-square h-20 w-12" />
               </div>
             </div>
-            <div className="w-[30vw] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">DB</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <SiMongodb className="aspect-square h-20 w-12" />
@@ -43,14 +68,14 @@ function Skills() {
                 <SiPostgresql className="aspect-square h-20 w-12" />
               </div>
             </div>
-            <div className="w-[30vw] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Version Control</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaGithub className="aspect-square h-20 w-12" />
                 <SiGit className="aspect-square h-20 w-12" />
               </div>
             </div>
-            <div className="w-[30vw] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Other Languages</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <SiC className="aspect-square h-20 w-12" />
@@ -58,7 +83,7 @@ function Skills() {
                 <SiAssemblyscript className="aspect-square h-20 w-12" />
               </div>
             </div>
-            <div className="w-[30vw] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Design</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <DiPhotoshop className="aspect-square h-20 w-12" />
@@ -66,7 +91,9 @@ function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
+    </div>
+
   )
 }
 
