@@ -15,7 +15,7 @@ function Section1() {
             <div className=" h-fit p-4 m-4 rounded-md flex justify-center items-center gap-8">
               <Image src={'/Chinmay.jpg'} width={400} height={400} alt="Chinmay" className="rounded-full aspect-square" />
               <div>
-                <p className="text-7xl font-extrabold">Chinmay G. Gadgil</p>
+                <p className="text-7xl font-extrabold p-2 m-2">Chinmay G. Gadgil</p>
                 <ul className=" text-gray-400 list-disc text-2xl">
                   <li className=" ">Full Stack Web Developer</li>
                   <li>Frontend Developer at <Link href={'https://talenflow.in'}>Talenflow.in</Link></li>

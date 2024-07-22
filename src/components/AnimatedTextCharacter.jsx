@@ -46,7 +46,7 @@ const AnimatedTextWord = ({text}) => {
           animate="visible"
         >
           {letters.map((letter, index) => (
-            <motion.span variants={child} key={index}>
+            <motion.span variants={child} key={index} className="text-6xl font-extrabold">
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
