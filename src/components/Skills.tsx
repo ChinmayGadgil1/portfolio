@@ -7,7 +7,7 @@ import { FiFigma } from "react-icons/fi";
 import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMongoose, SiNextdotjs, SiPostgresql, SiPostman,SiShadcnui, SiTypescript } from "react-icons/si";
 
 import { motion,useAnimation,useInView } from 'framer-motion';
-import AnimatedTextCharacter from './animatedTextCharacter';
+import AnimatedTextCharacter from './AnimatedTextCharacter';
 
 function Skills() {
 
