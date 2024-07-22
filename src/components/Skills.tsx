@@ -7,14 +7,13 @@ import { FiFigma } from "react-icons/fi";
 import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMongoose, SiNextdotjs, SiPostgresql, SiPostman,SiShadcnui, SiTypescript } from "react-icons/si";
 
 import { motion,useAnimation,useInView } from 'framer-motion';
+import AnimatedTextCharacter from './animatedTextCharacter';
 
 function Skills() {
 
     const ref = useRef(null)
     const inview = useInView(ref,{once:true});
     const control = useAnimation()
-
-    
     
     useEffect(() => {
       if(inview) {  
@@ -22,6 +21,9 @@ function Skills() {
       }
     
     }, [inview,control])
+
+    const text="My Skills"
+    
 
   return (
     <div className='overflow-hidden flex justify-center items-center'>
@@ -35,7 +37,7 @@ function Skills() {
     initial={"hidden"}
     animate = {control}
     transition={{delay:0.07,duration:0.5}}>
-          <p className="text-6xl font-bold p-4 m-4">MY SKILLS</p>
+          <AnimatedTextCharacter text="MY SKILLS"/>
           <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5 ">
             <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Frontend</p>
