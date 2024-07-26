@@ -58,7 +58,7 @@ function Page() {
           })
         }
       } catch (error) {
-        console.log(error);    //TODO! remove
+        
         toast({
           title:"Failure",
           description:"Failed to send message",
