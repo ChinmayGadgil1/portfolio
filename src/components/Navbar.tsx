@@ -8,9 +8,9 @@ function Navbar() {
       <div className='text-6xl font-extrabold'>Chinmay Gadgil</div>
       <div className='flex gap-10 text-4xl'>
         <Link href='/' className='flex flex-col justify-center items-center p-2 m-1'><FaHome/>Home</Link>
-        <Link href='/'  className='flex flex-col justify-center items-center p-2 m-1'><FaUser/>About</Link>
+        
         <Link href='/'  className='flex flex-col justify-center items-center p-2 m-1'><FaProjectDiagram/>Projects</Link>
-        <Link href='/'  className='flex flex-col justify-center items-center p-2 m-1'><FaPhone/>Contact Me</Link>
+        <Link href='/contact-me'  className='flex flex-col justify-center items-center p-2 m-1'><FaPhone/>Contact Me</Link>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import { DiPhotoshop} from "react-icons/di";
-import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaJs,  FaNodeJs, FaReact } from "react-icons/fa";
+import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaJs,  FaNodeJs, FaReact, FaRust } from "react-icons/fa";
 
 import { FiFigma } from "react-icons/fi";
 import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMongoose, SiNextdotjs, SiPostgresql, SiPostman,SiShadcnui, SiTypescript } from "react-icons/si";
@@ -47,11 +47,12 @@ function Skills() {
                 <FaHtml5 className={`${symbolClasses} hover:fill-orange-500`} />
                 <FaCss3 className={`${symbolClasses} hover:fill-blue-600`} />
                 <SiTypescript className={`${symbolClasses} hover:fill-blue-400`} />
-                <FaJs className={`${symbolClasses} hover:fill-yellow-300`} />
+                <FaJs className={`${symbolClasses} hover:fill-[#eeff01]`} />
                 <FaReact className={`${symbolClasses} hover:fill-blue-400`} />
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
                 <FaBootstrap className={`${symbolClasses} hover:fill-violet-600`} />
                 <SiShadcnui className={`${symbolClasses} hover:fill-gray-400`} />
+                
               </div>
             </div>
             <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
@@ -76,14 +77,14 @@ function Skills() {
               <p className="text-4xl font-bold">Version Control</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaGithub className={`${symbolClasses} hover:fill-gray-500`} />
-                <SiGit className={`${symbolClasses} hover:fill-red-600`} />
+                <SiGit className={`${symbolClasses} hover:fill-[#f42d2d]`} />
               </div>
             </div>
             <div className="w-[30%] h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Other Languages</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
-                <SiC className={`${symbolClasses} hover:fill-blue-700`} />
-                <SiCplusplus className={`${symbolClasses} hover:fill-blue-800`} />
+                <SiC className={`${symbolClasses} hover:fill-blue-500`} />
+                <SiCplusplus className={`${symbolClasses} hover:fill-blue-500`} />
                 <SiAssemblyscript className={`${symbolClasses} hover:fill-gray-500`} />
               </div>
             </div>
