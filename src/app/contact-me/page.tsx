@@ -15,13 +15,17 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import Navbar from '@/components/Navbar'
+import axios from 'axios'
+import { Description } from '@radix-ui/react-toast'
+import { toast } from '@/components/ui/use-toast'
 
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
   phone: z.string(),
-  email: z.string()
+  email: z.string(),
+  message: z.string()
 })
 
 
@@ -33,11 +37,34 @@ function Page() {
       name: "",
       email: "",
       phone: "",
+      message:""
     },
   })
 
-  const onSubmit = () => {
-        
+  const onSubmit =async (data: z.infer<typeof formSchema>) => {
+    try {
+      const response=await axios.post("/api/contact-me",data);
+        if (response.data.success) {
+          toast({
+            title:"Success",
+            description:"Message sent succesfully"
+          })
+        }
+        else{
+          toast({
+            title:"Failure",
+            description:"Failed to send message",
+            variant: 'destructive'
+          })
+        }
+      } catch (error) {
+        console.log(error);    //TODO! remove
+        toast({
+          title:"Failure",
+          description:"Failed to send message",
+          variant: 'destructive'
+        })
+      }
   }
 
   return (
@@ -84,6 +111,21 @@ function Page() {
                 <FormLabel className='text-3xl p-3'>Contact Number</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter contact number" className='text-2xl text-black' {...field} required />
+                </FormControl>
+
+
+                <FormMessage />
+              </FormItem>
+            )}
+            />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='text-3xl p-3'>Message</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your message" className='text-2xl text-black' {...field} required />
                 </FormControl>
 
 
