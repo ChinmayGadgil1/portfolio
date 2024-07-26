@@ -37,65 +37,64 @@ function Page() {
   })
 
   const onSubmit = () => {
-
+        
   }
 
   return (
-    <div className='w-screen h-screen bg-black text-white'>
-      <Navbar />
-      <div className=' flex justify-center items-center '>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className=" w-1/5 p-4 border border-black rounded-2xl">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className='text-3xl p-3 mt-5'>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter your name" className='text-2xl' {...field} />
-                    </FormControl>
+    <div className='overflow-x-hidden text-white'>
+    <Navbar/>
+    <div className='w-screen h-screen  flex justify-center   items-center bg-black text-white'>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-1/5 p-4 border-[2px] border-[#ae2cff]  rounded-2xl text-2xl">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='text-3xl p-3'>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your name" className='text-2xl text-black' {...field} required />
+                </FormControl>
 
 
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className='text-3xl p-3 mt-5'>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter your email" {...field} />
-                    </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+            />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='text-3xl p-3'>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your email" className='text-2xl text-black' {...field} required />
+                </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className='text-3xl p-3 mt-5'>Contact Number</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter contact number" {...field} />
-                    </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+            />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className='text-3xl p-3'>Contact Number</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter contact number" className='text-2xl text-black' {...field} required />
+                </FormControl>
 
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit">Submit</Button>
-            </form>
-          </Form>
-        
-      </div>
+                <FormMessage />
+              </FormItem>
+            )}
+            />
+          <Button type="submit" className='text-[#c042ba] bg-[#000000] text-3xl border border-[#f130ff] rounded-2xl'>Submit</Button>
+        </form>
+      </Form>
+    </div>
     </div>
   )
 }
