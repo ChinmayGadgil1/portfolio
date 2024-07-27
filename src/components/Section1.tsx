@@ -10,7 +10,7 @@ import { FaSquareXTwitter, FaX } from "react-icons/fa6";
 
 function Section1() {
   return (
-    <div className="flex gap-4 m-4 p-4 overflow-hidden">
+    <div className="hidden md:flex gap-4 m-4 p-4 overflow-hidden">
           <div className="h-[90vh]   flex justify-around items-center overflow-x-hidden">
             <div className=" h-fit p-4 m-4 rounded-md flex justify-center items-center gap-8">
               <Image src={'/Chinmay.jpg'} width={400} height={400} alt="Chinmay" className="rounded-full aspect-square" />

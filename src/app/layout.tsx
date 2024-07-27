@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={teko.className}>{children} 
+      <body className={`${teko.className} bg-black`}>{children} 
         <Toaster /></body>
     </html>
   );
