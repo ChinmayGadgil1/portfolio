@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="  text-[#ffffff] bg-black overflow-x-hidden ">
-      <Navbar/>
       <Section1/>
       <Skills/>
       <Footer/>

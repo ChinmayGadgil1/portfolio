@@ -76,7 +76,6 @@ function Page() {
 
   return (
     <div className='overflow-x-hidden text-white'>
-    <Navbar/>
     <div className='w-screen h-screen  flex justify-center   items-center bg-black text-white'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-w-[40%]  p-4 border-[2px] border-[#ae2cff]  rounded-2xl text-2xl">
