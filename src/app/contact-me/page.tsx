@@ -18,6 +18,7 @@ import Navbar from '@/components/Navbar'
 import axios from 'axios'
 import { Description } from '@radix-ui/react-toast'
 import { toast } from '@/components/ui/use-toast'
+import { useState } from 'react'
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -31,6 +32,8 @@ const formSchema = z.object({
 
 function Page() {
 
+  const [loading, setLoading] = useState<boolean>(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,6 +45,7 @@ function Page() {
   })
 
   const onSubmit =async (data: z.infer<typeof formSchema>) => {
+    setLoading(true)
     try {
       const response=await axios.post("/api/contact-me",data);
         if (response.data.success) {
@@ -65,6 +69,9 @@ function Page() {
           variant: 'destructive'
         })
       }
+      finally{
+        setLoading(false)
+      }
   }
 
   return (
@@ -72,7 +79,7 @@ function Page() {
     <Navbar/>
     <div className='w-screen h-screen  flex justify-center   items-center bg-black text-white'>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-1/5 p-4 border-[2px] border-[#ae2cff]  rounded-2xl text-2xl">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-w-[40%]  p-4 border-[2px] border-[#ae2cff]  rounded-2xl text-2xl">
           <FormField
             control={form.control}
             name="name"
@@ -133,7 +140,7 @@ function Page() {
               </FormItem>
             )}
             />
-          <Button type="submit" className='text-[#c042ba] bg-[#000000] text-3xl border border-[#f130ff] rounded-2xl'>Submit</Button>
+          <Button type="submit" className='text-[#c042ba] bg-[#000000] text-3xl border border-[#f130ff] rounded-2xl' disabled={loading}>Submit</Button>
         </form>
       </Form>
     </div>

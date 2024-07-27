@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Teko } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster"
 import "./globals.css";
 
 const teko = Teko({ subsets: ["latin"] });
@@ -16,7 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={teko.className}>{children}</body>
+      <body className={teko.className}>{children} 
+        <Toaster /></body>
     </html>
   );
 }
