@@ -14,6 +14,8 @@ function Navbar() {
     setClicked(!clicked);
   }
 
+  
+
   return (
     <>
     <div className='hidden md:flex h-fit justify-between items-center bg-[#6a23a8] text-2xl p-2 w-screen'>
