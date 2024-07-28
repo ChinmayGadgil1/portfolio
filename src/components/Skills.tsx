@@ -8,14 +8,14 @@ import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMong
 
 import { motion, useAnimation, useInView } from 'framer-motion';
 
+
 function Skills() {
   const symbolClasses = "aspect-square h-20 w-12 hover:scale-110";
 
   const ref = useRef(null)
-  const inview = useInView(ref);
+  const inview = useInView(ref, { once: true });
   const control = useAnimation()
-
-
+ 
 
   useEffect(() => {
     if (inview) {
@@ -23,6 +23,11 @@ function Skills() {
     }
 
   }, [inview, control])
+
+  const skillsref = useRef(null);
+  const isInView = useInView(skillsref);
+  
+
 
 
 
@@ -40,16 +45,16 @@ function Skills() {
           initial={"hidden"}
           animate={control}
           transition={{ delay: 0.08, duration: 1 }}>
-          <div className='font-extrabold text-7xl' ref={ref} style={{
-            transform: inview ? "none" : "translateX(-200px)",
-            opacity: inview ? 1 : 0,
+          <div className='font-extrabold text-7xl' ref={skillsref} style={{
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
             transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
           }}>My Skills</div>
 
           <div className="flex flex-wrap h-fit justify-center items-center gap-5 " >
-            <div className="w-[30%]  border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateX(-200px)",
-              opacity: inview ? 1 : 0,
+            <div className="w-[30%] min-h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
             }}>
               <p className="text-4xl font-bold hover:text-bold ">Frontend</p>
@@ -65,9 +70,9 @@ function Skills() {
 
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateY(200px)",
-              opacity: inview ? 1 : 0,
+            <div className="w-[30%] min-h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+              transform: isInView ? "none" : "translateY(200px)",
+              opacity: isInView ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
             }}>
               <p className="text-4xl font-bold">Backend</p>
@@ -79,9 +84,9 @@ function Skills() {
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateX(200px)",
-              opacity: inview ? 1 : 0,
+            <div className="w-[30%] min-h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+              transform: isInView ? "none" : "translateX(200px)",
+              opacity: isInView ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
             }}>
               <p className="text-4xl font-bold">DB</p>
@@ -91,9 +96,9 @@ function Skills() {
                 <SiPostgresql className={`${symbolClasses} hover:fill-orange-100`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateY(-200px)",
-              opacity: inview ? 1 : 0,
+            <div className="w-[30%] min-h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+              transform: isInView ? "none" : "translateY(-200px)",
+              opacity: isInView ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
             }}>
               <p className="text-4xl font-bold">Version Control</p>
@@ -102,9 +107,9 @@ function Skills() {
                 <SiGit className={`${symbolClasses} hover:fill-[#f42d2d]`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateX(200px)",
-              opacity: inview ? 1 : 0,
+            <div className="w-[30%] min-h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+              transform: isInView ? "none" : "translateX(200px)",
+              opacity: isInView ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
             }}>
               <p className="text-4xl font-bold">Other Languages</p>
@@ -114,9 +119,9 @@ function Skills() {
                 <SiAssemblyscript className={`${symbolClasses} hover:fill-gray-500`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateY(-200px)",
-              opacity: inview ? 1 : 0,
+            <div className="w-[30%] min-h-[30vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+              transform: isInView ? "none" : "translateY(-200px)",
+              opacity: isInView ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
             }}>
               <p className="text-4xl font-bold">Design</p>
@@ -145,18 +150,14 @@ function Skills() {
           initial={"hidden"}
           animate={control}
           transition={{ delay: 0.08, duration: 1 }}>
-          <div className='font-extrabold text-7xl' ref={ref} style={{
-            transform: inview ? "none" : "translateX(200px)",
-            opacity: inview ? 1 : 0,
+          <div className='font-extrabold text-7xl' ref={skillsref} style={{
+            transform: isInView ? "none" : "translateZ(200px)",
+            opacity: isInView ? 1 : 0,
             transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
           }}>My Skills</div>
-          <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5">
-            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateX(-200px)",
-              opacity: inview ? 1 : 0,
-              transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-            }}>
-              <p className="text-4xl font-bold hover:text-bold">Frontend</p>
+          <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5 ">
+            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+              <p className="text-4xl font-bold hover:text-bold ">Frontend</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaHtml5 className={`${symbolClasses} hover:fill-orange-500`} />
                 <FaCss3 className={`${symbolClasses} hover:fill-blue-600`} />
@@ -166,13 +167,10 @@ function Skills() {
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
                 <FaBootstrap className={`${symbolClasses} hover:fill-violet-600`} />
                 <SiShadcnui className={`${symbolClasses} hover:fill-gray-400`} />
+
               </div>
             </div>
-            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateY(200px)",
-              opacity: inview ? 1 : 0,
-              transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-            }}>
+            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Backend</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaNodeJs className={`${symbolClasses} hover:fill-green-500`} />
@@ -182,11 +180,7 @@ function Skills() {
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
               </div>
             </div>
-            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateX(200px)",
-              opacity: inview ? 1 : 0,
-              transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-            }}>
+            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">DB</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <SiMongodb className={`${symbolClasses} hover:fill-green-900`} />
@@ -194,22 +188,14 @@ function Skills() {
                 <SiPostgresql className={`${symbolClasses} hover:fill-orange-100`} />
               </div>
             </div>
-            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateY(-200px)",
-              opacity: inview ? 1 : 0,
-              transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-            }}>
+            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Version Control</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaGithub className={`${symbolClasses} hover:fill-gray-500`} />
                 <SiGit className={`${symbolClasses} hover:fill-[#f42d2d]`} />
               </div>
             </div>
-            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateX(200px)",
-              opacity: inview ? 1 : 0,
-              transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-            }}>
+            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Other Languages</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <SiC className={`${symbolClasses} hover:fill-blue-500`} />
@@ -217,18 +203,13 @@ function Skills() {
                 <SiAssemblyscript className={`${symbolClasses} hover:fill-gray-500`} />
               </div>
             </div>
-            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={ref} style={{
-              transform: inview ? "none" : "translateZ(-200px)",
-              opacity: inview ? 1 : 0,
-              transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-            }}>
+            <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold">Design</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <DiPhotoshop className={`${symbolClasses} hover:fill-blue-700`} />
                 <FiFigma className={`${symbolClasses} hover:fill-gray-500`} />
               </div>
             </div>
-
           </div>
         </motion.div>
       </div>

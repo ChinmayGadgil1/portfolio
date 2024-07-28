@@ -79,8 +79,8 @@ function Section1() {
 
       <div className='flex md:hidden flex-col w-screen h-screen justify-center items-center gap-5'>
         <div className='w-4/5 flex flex-col items-center'>
-          <Image src={'/Chinmay.jpg'} width={175} height={175} alt="Chinmay" className="rounded-full aspect-square w-[60vw] max-w-[250px]" unoptimized/>
-          <p className="text-4xl font-extrabold p-2 m-2">Chinmay Gadgil</p>
+          <Image src={'/Chinmay.jpg'} width={175} height={175} alt="Chinmay" className="rounded-full aspect-square w-[60vw] max-w-[250px]" unoptimized />
+          <p className="text-4xl font-extrabold p-2 m-2" >Chinmay Gadgil</p>
         </div>
         <div>
           <ul className=" text-gray-400 list-disc text-xl max-w-[70vw]">
