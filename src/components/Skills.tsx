@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import { DiPhotoshop } from "react-icons/di";
-import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaJs, FaNodeJs, FaReact, FaRust } from "react-icons/fa";
+import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaJs, FaNodeJs, FaReact} from "react-icons/fa";
 
 import { FiFigma } from "react-icons/fi";
 import { SiAssemblyscript, SiC, SiCplusplus, SiExpress, SiGit, SiMongodb, SiMongoose, SiNextdotjs, SiPostgresql, SiPostman, SiShadcnui, SiTypescript } from "react-icons/si";
