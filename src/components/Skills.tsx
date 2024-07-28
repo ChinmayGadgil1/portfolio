@@ -33,13 +33,15 @@ function Skills() {
 
   }, [minview, mcontrol])
 
-  const text = "My Skills"
+  
+  const skillsref = useRef(null);
+  const isInView = useInView(skillsref);
 
 
   return (
     <>
 
-      <div className='overflow-hidden hidden lg:flex justify-center items-center '>
+      <div className='overflow-hidden hidden lg:flex w-screen justify-center items-center '>
 
         <motion.div ref={ref} className="flex flex-col items-center m-4 p-4 overflow-hidden w-[90vw]" variants={
           {
@@ -50,9 +52,18 @@ function Skills() {
           initial={"hidden"}
           animate={control}
           transition={{ delay: 0.08, duration: 1 }}>
-          <AnimatedTextCharacter text={text} />
-          <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5 ">
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className='font-extrabold text-7xl' ref={skillsref} style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>My Skills</div>
+          
+          <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5 " >
+            <div className="w-[30%]  border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
               <p className="text-4xl font-bold hover:text-bold ">Frontend</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaHtml5 className={`${symbolClasses} hover:fill-orange-500`} />
@@ -66,7 +77,11 @@ function Skills() {
 
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+          transform: isInView ? "none" : "translateY(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
               <p className="text-4xl font-bold">Backend</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaNodeJs className={`${symbolClasses} hover:fill-green-500`} />
@@ -76,7 +91,11 @@ function Skills() {
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+          transform: isInView ? "none" : "translateX(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
               <p className="text-4xl font-bold">DB</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <SiMongodb className={`${symbolClasses} hover:fill-green-900`} />
@@ -84,14 +103,22 @@ function Skills() {
                 <SiPostgresql className={`${symbolClasses} hover:fill-orange-100`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+          transform: isInView ? "none" : "translateY(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
               <p className="text-4xl font-bold">Version Control</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <FaGithub className={`${symbolClasses} hover:fill-gray-500`} />
                 <SiGit className={`${symbolClasses} hover:fill-[#f42d2d]`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+          transform: isInView ? "none" : "translateX(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
               <p className="text-4xl font-bold">Other Languages</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <SiC className={`${symbolClasses} hover:fill-blue-500`} />
@@ -99,7 +126,11 @@ function Skills() {
                 <SiAssemblyscript className={`${symbolClasses} hover:fill-gray-500`} />
               </div>
             </div>
-            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
+            <div className="w-[30%] h-[40vh] border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" ref={skillsref} style={{
+          transform: isInView ? "none" : "translateY(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+        }}>
               <p className="text-4xl font-bold">Design</p>
               <div className="flex flex-wrap gap-5 justify-center items-center max-w-[60%]">
                 <DiPhotoshop className={`${symbolClasses} hover:fill-blue-700`} />
