@@ -13,9 +13,11 @@ function Skills() {
   const symbolClasses = "aspect-square h-20 w-12 hover:scale-110";
 
   const ref = useRef(null)
+  const mref = useRef(null)
   const inview = useInView(ref, { once: true });
+  const minview = useInView(ref, { once: true });
   const control = useAnimation()
- 
+  const mcontrol = useAnimation()
 
   useEffect(() => {
     if (inview) {
@@ -24,11 +26,16 @@ function Skills() {
 
   }, [inview, control])
 
+  useEffect(() => {
+    if (minview) {
+      mcontrol.start("visible");
+    }
+
+  }, [minview, mcontrol])
+
+
   const skillsref = useRef(null);
   const isInView = useInView(skillsref);
-  
-
-
 
 
   return (
@@ -140,21 +147,9 @@ function Skills() {
       {/* Mobile View  */}
 
       <div className='overflow-hidden lg:hidden flex justify-center items-center '>
-
-        <motion.div ref={ref} className="flex flex-col items-center m-4 p-4 overflow-hidden w-[90vw]" variants={
-          {
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
-          }
-        }
-          initial={"hidden"}
-          animate={control}
-          transition={{ delay: 0.08, duration: 1 }}>
-          <div className='font-extrabold text-7xl' ref={skillsref} style={{
-            transform: isInView ? "none" : "translateZ(200px)",
-            opacity: isInView ? 1 : 0,
-            transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
-          }}>My Skills</div>
+            
+        <div  className="flex flex-col items-center m-4 p-4 overflow-hidden w-[90vw]" >
+          <div className='font-extrabold text-6xl'>My Skills</div>
           <div className="flex flex-wrap h-fit justify-aroundvitems-center gap-5 ">
             <div className="w-full h-fit border border-[#bc5efe] flex flex-col items-center gap-5 m-2 p-2" >
               <p className="text-4xl font-bold hover:text-bold ">Frontend</p>
@@ -211,7 +206,7 @@ function Skills() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
     </>
