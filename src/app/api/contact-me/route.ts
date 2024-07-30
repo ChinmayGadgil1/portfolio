@@ -21,7 +21,8 @@ export async function POST(req: Request) {
     },
   });
 
-  await transporter.sendMail(mailSchema);
+  try {
+    await transporter.sendMail(mailSchema);
 
   return Response.json(
     {
@@ -30,4 +31,15 @@ export async function POST(req: Request) {
     },
     { status: 200 }
   );
+  } catch (error) {
+    return Response.json(
+      {
+        success: false,
+        message: "Error sending message",
+      },
+      { status:400  }
+    );
+  }
+
+  
 }
