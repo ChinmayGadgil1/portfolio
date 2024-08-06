@@ -41,7 +41,7 @@ function Skills() {
   return (
     <>
 
-      <div className='overflow-hidden hidden lg:flex w-screen justify-center items-center '>
+      <div className='overflow-hidden hidden h-screen lg:flex w-screen justify-center items-center '>
 
         <motion.div ref={ref} className="flex flex-col justify-center items-center m-4 p-4 overflow-hidden w-[90vw]" variants={
           {
