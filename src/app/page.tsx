@@ -11,7 +11,6 @@ export default function Home() {
     <div className="  text-[#ffffff] bg-black overflow-x-hidden ">
       <Section1/>
       <Skills/>
-      <Footer/>
     </div>
   );
 }

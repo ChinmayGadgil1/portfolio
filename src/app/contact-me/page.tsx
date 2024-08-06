@@ -71,6 +71,7 @@ function Page() {
       }
       finally{
         setLoading(false)
+        form.reset()
       }
   }
 
@@ -88,9 +89,6 @@ function Page() {
                 <FormControl>
                   <Input placeholder="Enter your name" className='text-2xl text-black' {...field} required />
                 </FormControl>
-
-
-
                 <FormMessage />
               </FormItem>
             )}
