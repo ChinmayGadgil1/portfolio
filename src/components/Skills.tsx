@@ -72,8 +72,8 @@ function Skills() {
                 <FaJs className={`${symbolClasses} hover:fill-[#eeff01]`} />
                 <FaReact className={`${symbolClasses} hover:fill-blue-400`} />
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
-                <FaBootstrap className={`${symbolClasses} hover:fill-violet-600`} />
-                <SiShadcnui className={`${symbolClasses} hover:fill-gray-400`} />
+                {/* <FaBootstrap className={`${symbolClasses} hover:fill-violet-600`} /> */}
+                {/* <SiShadcnui className={`${symbolClasses} hover:fill-gray-400`} /> */}
 
               </div>
             </div>
@@ -160,8 +160,8 @@ function Skills() {
                 <FaJs className={`${symbolClasses} hover:fill-[#eeff01]`} />
                 <FaReact className={`${symbolClasses} hover:fill-blue-400`} />
                 <SiNextdotjs className={`${symbolClasses} hover:fill-gray-400`} />
-                <FaBootstrap className={`${symbolClasses} hover:fill-violet-600`} />
-                <SiShadcnui className={`${symbolClasses} hover:fill-gray-400`} />
+                {/* <FaBootstrap className={`${symbolClasses} hover:fill-violet-600`} />
+                <SiShadcnui className={`${symbolClasses} hover:fill-gray-400`} /> */}
 
               </div>
             </div>
