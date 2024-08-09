@@ -53,12 +53,12 @@ function page() {
 
 
     {/* MOBILE VERSION */}
-    <div className='flex w-screen sm:hidden justify-center items-center mt-[40px]'>
+    <div className='flex w-screen sm:hidden justify-center items-center mt-[40px] overflow-hidden'>
 
-      <div className='w-[75vw] flex flex-col justify-center items-center gap-2 m-2  '>
+      <div className='w-[80vw] flex flex-col justify-center  items-center gap-2    '>
 
-        <div className='flex flex-col justify-center items-center border border-[#702eff] rounded-xl p-2'>
-          <div className='text-6xl font-extrabold p-4'>Sticker-Hive</div>
+        <div className='flex flex-col justify-center items-center  '>
+          <div className='text-6xl font-extrabold p-2'>Sticker-Hive</div>
           <Carousel className='border p-4 flex justify-center items-center select-none max-w-[50vw]'>
             <CarouselContent>
               <CarouselItem className='flex justify-center items-center'><Image src={'/sticker-hive.png'} alt='Sticker Hive' width={400} height={200} /></CarouselItem>
@@ -68,15 +68,15 @@ function page() {
             <CarouselNext />
           </Carousel>
 
-          <div className=' text-xl p-4'>Sticker Hive is your one-stop solution for creating custom keyboard key stickers with ease. Our platform allows you to design and personalize stickers for your keyboard keys without the need for any editing software. 
+          <div className=' text-xl p-2'>Sticker Hive is your one-stop solution for creating custom keyboard key stickers with ease. Our platform allows you to design and personalize stickers for your keyboard keys without the need for any editing software. 
           </div>
           <div >
-          <div className='flex flex-col m-4 items-center'>
+          <div className='flex flex-col m-2 items-center'>
           <p className='text-2xl font-extrabold'>Link:</p>
           <Link href={'http://sticker-hive.vercel.app/'} className='text-xl font-bold'
           >http://sticker-hive.vercel.app</Link>
           </div>
-          <div className='flex flex-col m-4 items-center'>
+          <div className='flex flex-col m-2 items-center'>
           <p className='text-2xl font-extrabold'>Github Repo:</p>
           <Link href={'https://github.com/ChinmayGadgil1/sticker-hive'} className='text-xl font-bold'
           >https://github.com/ChinmayGadgil1/sticker-hive</Link>
