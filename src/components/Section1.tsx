@@ -48,6 +48,8 @@ function Section1() {
         }}>
                 <li className=" ">Full Stack Web Developer</li>
                 <li>Frontend Developer at <Link href={'https://talenflow.in'}>Talenflow.in</Link></li>
+            <li>GDG on Campus Cloud Lead</li>
+
                 <li>Student At Goa College Of Engineering</li>
               </ul>
             </div>
@@ -86,6 +88,7 @@ function Section1() {
           <ul className=" text-gray-400 list-disc text-xl max-w-[70vw]">
             <li className=" ">Full Stack Web Developer</li>
             <li>Frontend Developer at <Link href={'https://talenflow.in'}>Talenflow.in</Link></li>
+            <li>GDG on Campus Cloud Lead</li>
             <li>Student At Goa College Of Engineering</li>
           </ul>
         </div>
