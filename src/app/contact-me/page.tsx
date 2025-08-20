@@ -19,6 +19,7 @@ import axios from 'axios'
 import { Description } from '@radix-ui/react-toast'
 import { toast } from '@/components/ui/use-toast'
 import { useState } from 'react'
+import DotGrid from '@/DotGrid/DotGrid'
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -76,8 +77,26 @@ function Page() {
   }
 
   return (
-    <div className='overflow-x-hidden text-white'>
-    <div className='w-screen h-screen  flex justify-center   items-center bg-black text-white'>
+    <div className='overflow-x-hidden text-white '>
+      <div className='mt-32'></div>
+    <div className="text-center ">
+      <h1 className="text-6xl font-bold text-white ">Contact Me</h1>
+    </div>
+    <div className='w-screen h-screen  flex justify-center     text-white'>
+
+      <div className="fixed inset-0 -z-10">
+              <DotGrid
+                dotSize={8}
+                gap={32}
+                baseColor="#271E37"
+                activeColor="#5227FF"
+                proximity={120}
+                shockRadius={150}
+                shockStrength={1}
+                resistance={750}
+                returnDuration={1}
+              />
+            </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-w-[40%]  p-4 border-[2px] border-[#ae2cff]  rounded-2xl text-2xl">
           <FormField
