@@ -30,7 +30,7 @@ function Section1() {
       <div className="hidden md:flex gap-4 m-4 p-4 overflow-hidden">
         <div className="h-[90vh]   flex justify-around items-center overflow-x-hidden">
           <div className=" h-fit p-4 m-4 rounded-md flex justify-center items-center gap-8">
-            <Image src={'/Chinmay.jpg'} width={400} height={400} alt="Chinmay" className="rounded-full aspect-square w-[25vw]" unoptimized style={{
+            <Image src={'/Chinmay.jpg'} width={400} height={450} alt="Chinmay" className="rounded-full w-[25vw]" unoptimized style={{
               transform: inview ? "none" : "translateZ(200px)",
               opacity: inview ? 1 : 0,
               transition: "all 1.0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s"
